@@ -48,9 +48,9 @@ public class SecurityConfig {
 
         httpSecurity.authorizeHttpRequests(auth -> auth
                 .requestMatchers(new AntPathRequestMatcher("/**"))
-                .permitAll()
+                .authenticated()
                 .anyRequest()
-                .authenticated());
+                .permitAll());
         httpSecurity.oauth2ResourceServer((oauth2) -> oauth2
                 .jwt(Customizer.withDefaults()));
         httpSecurity.oauth2Login(Customizer.withDefaults())

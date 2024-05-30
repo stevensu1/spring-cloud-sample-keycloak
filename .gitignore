@@ -1,0 +1,5 @@
+# Project exclude paths
+/spring-cloud-A/target/
+/spring-cloud-B/target/
+/spring-cloud-keycloak/target/
+/spring-gateway/target/

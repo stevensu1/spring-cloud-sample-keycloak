@@ -16,25 +16,27 @@
 
 package com.example.demospringbootkeycloak.feign;
 
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RequestMapping("feign/")
 public class FeignController {
 
 
-    @Autowired
+    @Resource
     BFeignClientsService bFeignClientsService;
-
+    //http://192.168.0.11:18002/service-auth/web/index
     //http://192.168.0.11:18002/service-auth/feign/service-b/test-service-b
-    @GetMapping("/feign/service-b/test-service-b")
+    @GetMapping("/service-b/test-service-b")
     public String testb() {
         System.out.println(bFeignClientsService.test1());
         return "This is service B.";
     }
     //http://192.168.0.11:18002/service-auth/feign/service-b/test-service-b/customers
-    @GetMapping("/feign/service-b/test-service-b/customers")
+    @GetMapping("/service-b/test-service-b/customers")
     public String customersb() {
         System.out.println(bFeignClientsService.customers());
         return "This is service B.";

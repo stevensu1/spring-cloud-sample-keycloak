@@ -1,6 +1,8 @@
 package com.example.demospringbootkeycloak.demos.web;
 
+import com.example.demospringbootkeycloak.feign.BFeignClientsService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,8 @@ import java.security.Principal;
 @Controller
 @RequestMapping("/web")
 public class WebController {
+
+
     //http://192.168.0.11:18002/service-auth/web/index
     @ResponseBody
     @GetMapping(path = "/index")
